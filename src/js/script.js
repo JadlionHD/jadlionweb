@@ -194,14 +194,14 @@ window.onkeyup = (ev) => {
 };
 
 addEventListener("DOMContentLoaded", (event) => {
-  // setTimeout(() => {
-  animeLoading.pause();
-  container.classList.add("appear");
-  loading.classList.add("hide");
-  // }, 4000);
+  setTimeout(() => {
+    animeLoading.pause();
+    container.classList.add("appear");
+    loading.classList.add("hide");
+  }, 2000);
 
-  // setTimeout(() => {
-  container.style.display = "block";
-  loading.style.display = "none";
-  // }, 4500);
+  setTimeout(() => {
+    container.style.display = "block";
+    loading.style.display = "none";
+  }, 2500);
 });
