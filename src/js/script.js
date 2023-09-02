@@ -93,6 +93,11 @@ const animeLoading = anime({
   duration: 990
 });
 
+const sosMed = document.getElementById("socialMedia");
+const certi = document.getElementById("certificate");
+const prjct = document.getElementById("projects");
+const skills = document.getElementById("skills");
+
 /**
  * @param {MouseEvent} ev
  */
@@ -102,30 +107,51 @@ function handleList(ev) {
   // document.getElementById("container").style.opacity = "0.3";
   // document.getElementById("container").style.filter = "blur(5px)";
 
-  modal.style.display = "block";
+  modal.classList.remove("hide");
+  modal.classList.add("appear");
+  setTimeout(() => {
+    modal.style.display = "block";
+  }, 100);
+
   switch (type) {
     case "sosmed": {
-      animeSosmed.play();
-      document.getElementById("socialMedia").style.display = "block";
+      sosMed.classList.remove("hide");
+      sosMed.classList.add("appear");
+      setTimeout(() => {
+        sosMed.style.display = "block";
+        animeSosmed.play();
+      }, 100);
       tempType = type;
       break;
     }
     case "certificate": {
-      animeCert.play();
-      document.getElementById("certificate").style.display = "block";
+      certi.classList.remove("hide");
+      certi.classList.add("appear");
+      setTimeout(() => {
+        certi.style.display = "block";
+        animeCert.play();
+      }, 100);
       tempType = type;
       break;
     }
     case "projects": {
-      animeProject.play();
-      document.getElementById("projects").style.display = "block";
+      prjct.classList.remove("hide");
+      prjct.classList.add("appear");
+      setTimeout(() => {
+        prjct.style.display = "block";
+        animeProject.play();
+      }, 100);
       tempType = type;
       break;
     }
 
     case "skills": {
-      animeSkills.play();
-      document.getElementById("skills").style.display = "block";
+      skills.classList.remove("hide");
+      skills.classList.add("appear");
+      setTimeout(() => {
+        skills.style.display = "block";
+        animeSkills.play();
+      }, 100);
       tempType = type;
       break;
     }
@@ -133,11 +159,19 @@ function handleList(ev) {
 }
 
 function closeTab() {
-  modal.style.display = "none";
+  modal.classList.add("hide");
+  modal.classList.remove("appear");
+  setTimeout(() => {
+    modal.style.display = "none";
+  }, 300);
 
   switch (tempType) {
     case "sosmed": {
-      document.getElementById("socialMedia").style.display = "none";
+      sosMed.classList.remove("appear");
+      sosMed.classList.add("hide");
+      setTimeout(() => {
+        sosMed.style.display = "none";
+      }, 300);
       tempType = "";
       animeSosmed.restart();
       animeSosmed.pause();
@@ -145,7 +179,11 @@ function closeTab() {
     }
 
     case "certificate": {
-      document.getElementById("certificate").style.display = "none";
+      certi.classList.remove("appear");
+      certi.classList.add("hide");
+      setTimeout(() => {
+        certi.style.display = "none";
+      }, 300);
       tempType = "";
       animeCert.restart();
       animeCert.pause();
@@ -153,7 +191,11 @@ function closeTab() {
     }
 
     case "projects": {
-      document.getElementById("projects").style.display = "none";
+      prjct.classList.remove("appear");
+      prjct.classList.add("hide");
+      setTimeout(() => {
+        prjct.style.display = "none";
+      }, 300);
       tempType = "";
       animeProject.restart();
       animeProject.pause();
@@ -162,7 +204,11 @@ function closeTab() {
     }
 
     case "skills": {
-      document.getElementById("skills").style.display = "none";
+      skills.classList.remove("appear");
+      skills.classList.add("hide");
+      setTimeout(() => {
+        skills.style.display = "none";
+      }, 300);
       tempType = "";
       animeSkills.restart();
       animeSkills.pause();
