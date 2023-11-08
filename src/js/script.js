@@ -10,13 +10,14 @@ const pixi = PIXI;
 
 function initPixi() {
   app = new pixi.Application({
-    width: "432",
-    height: "575"
+    backgroundAlpha: 0,
+    width: "470",
+    height: "531"
   });
 
-  var image = pixi.Sprite.from("assets/pp.jpg");
-  image.width = "432";
-  image.height = "575";
+  var image = pixi.Sprite.from("assets/pp.png");
+  // image.width = "432";
+  // image.height = "575";
   app.stage.addChild(image);
 
   displacementSprite = pixi.Sprite.from("assets/download.png");

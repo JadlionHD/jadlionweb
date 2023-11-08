@@ -81,8 +81,6 @@ a:hover {
 }
 
 .sertif {
-  width: 280px;
-  height: 280px;
   background-color: red;
 }
 
@@ -135,13 +133,15 @@ a:hover {
     /* margin-right: 35rem; */
   }
   .sertif {
-    width: 160px;
-    height: 160px;
+    width: 540px;
   }
   .project {
     width: 140px;
     height: 140px;
     background-color: red;
+  }
+  #carouselExample {
+    margin-top: 13rem;
   }
 }
 
@@ -173,6 +173,12 @@ a:hover {
   .list-group {
     flex-wrap: wrap;
   }
+  .sertif {
+    width: 340px;
+  }
+  #carouselExample {
+    margin-top: 10rem;
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -193,6 +199,9 @@ a:hover {
   .list-group {
     flex-wrap: wrap;
     row-gap: 20px;
+  }
+  .sertif {
+    width: 240px;
   }
 }
 
