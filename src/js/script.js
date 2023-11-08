@@ -12,7 +12,7 @@ function initPixi() {
   app = new pixi.Application({
     backgroundAlpha: 0,
     width: "470",
-    height: "531"
+    height: "440"
   });
 
   var image = pixi.Sprite.from("assets/pp.png");
