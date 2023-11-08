@@ -296,27 +296,51 @@
       <div id="content">
         <canvas id="pp"></canvas>
         <div class="text">
-          <h1 id="title">Hendra Gunawan</h1>
-          <p id="member" style="font-size: 16px; color: #b7b7b7">
+          <h1 id="title" class="text-center">Hendra Gunawan</h1>
+          <p id="member" class="text-center" style="font-size: 16px; color: #b7b7b7">
             Member of
             <a href="https://github.com/KukangDeveloper" target="_blank" rel="noreferrer noopener"
               ><u>Kukang Dev</u></a
             >
           </p>
-          <p>
+          <p class="text-center">
             Perkenalkan nama saya <u>Hendra Gunawan</u>, 18 tahun dan saya seorang
             <u>BackEnd Developer</u>
           </p>
-          <p>
+          <p class="text-center">
             Hobi saya membuat sebuah aplikasi, terlebih lagi aplikasi yang berhubungan dengan
             networking seperti multiplayer game
           </p>
-          <ul style="list-style-type: none">
+          <!-- <ul style="list-style-type: none">
             <li onclick="handleList(this)" listType="sosmed">Social Media</li>
             <li onclick="handleList(this)" listType="certificate">Certificate</li>
             <li onclick="handleList(this)" listType="projects">Projects</li>
             <li onclick="handleList(this)" listType="skills">Skills</li>
-          </ul>
+          </ul> -->
+          <div class="d-flex justify-content-center">
+            <div class="btn-group w-25">
+              <button
+                type="button"
+                class="btn btn-secondary dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Menu
+              </button>
+              <ul class="dropdown-menu">
+                <li onclick="handleList(this)" class="dropdown-item" listType="sosmed">
+                  Social Media
+                </li>
+                <li onclick="handleList(this)" class="dropdown-item" listType="certificate">
+                  Certificate
+                </li>
+                <li onclick="handleList(this)" class="dropdown-item" listType="projects">
+                  Projects
+                </li>
+                <li onclick="handleList(this)" class="dropdown-item" listType="skills">Skills</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>

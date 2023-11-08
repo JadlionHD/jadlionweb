@@ -48,9 +48,9 @@ a:hover {
 } */
 
 #content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
   padding-top: 5rem;
   /* margin-left: 15rem; */
 }
@@ -58,12 +58,17 @@ a:hover {
 #content .text {
   font-size: 20px;
   padding-left: 30px;
-  padding-right: 35rem;
+  padding-right: 2rem;
   /* margin-right: 35rem; */
 }
 
 #content canvas {
-  margin-left: 15rem;
+  /* margin-left: 15rem; */
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 #content .text p {
@@ -112,7 +117,7 @@ a:hover {
 
 @media only screen and (max-width: 1586px) {
   #content canvas {
-    margin-left: 3.5rem;
+    /* margin-left: 3.5rem; */
   }
   #content .text {
     font-size: 20px;
@@ -124,7 +129,7 @@ a:hover {
 
 @media only screen and (max-width: 1074px) {
   #content canvas {
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
   }
   #content .text {
     font-size: 20px;
@@ -183,11 +188,11 @@ a:hover {
 
 @media only screen and (max-width: 400px) {
   #content {
-    display: block;
+    /* display: block; */
     /* margin-top: 2rem; */
   }
   #content canvas {
-    margin-left: 5rem;
+    /* margin-left: 5rem; */
     width: 200px;
   }
   #content .text {
