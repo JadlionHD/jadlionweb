@@ -1,16 +1,24 @@
 {
-  "name": "website",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "web-port",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "@types/animejs": "^3.1.7",
-    "animejs": "^3.2.1",
-    "pixi.js": "^7.2.4"
+    "@types/animejs": "^3.1.12",
+    "@types/jquery": "^3.5.29",
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.0"
+  },
+  "dependencies": {
+    "animejs": "^3.2.2",
+    "jquery": "^3.7.1"
   }
 }
