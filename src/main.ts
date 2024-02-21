@@ -220,6 +220,11 @@ let type = "none";
 getElById<HTMLLIElement>("show-techs").addEventListener("click", () => {
   if (loading === false) {
     loading = true;
+    anime({
+      targets: "#certificates .items",
+      delay: anime.stagger(100),
+      keyframes: [{ opacity: 0 }]
+    });
 
     anime({
       targets: "#skills-tabs",
@@ -227,7 +232,7 @@ getElById<HTMLLIElement>("show-techs").addEventListener("click", () => {
       keyframes: [
         {
           duration: 500,
-          bottom: "100px"
+          bottom: "200px"
         }
       ],
       changeComplete: function () {
@@ -246,12 +251,13 @@ getElById<HTMLLIElement>("show-techs").addEventListener("click", () => {
               duration: 2500,
               scale: 1
             }
-          ]
+          ],
+          changeComplete: function () {
+            loading = false;
+          }
         });
       }
     });
-
-    loading = false;
   }
 
   type = "skills";
@@ -260,8 +266,48 @@ getElById<HTMLLIElement>("show-techs").addEventListener("click", () => {
 getElById<HTMLLIElement>("show-certificate").addEventListener("click", () => {
   if (loading === false) {
     loading = true;
-    loading = false;
+
+    anime({
+      targets: "#techs-languages .items",
+      delay: anime.stagger(100),
+      keyframes: [{ opacity: 0 }]
+    });
+
+    anime({
+      targets: "#skills-tabs",
+      duration: 1000,
+      keyframes: [
+        {
+          duration: 500,
+          bottom: "200px"
+        }
+      ],
+      changeComplete: function () {
+        $(getElById("certificates")).fadeIn();
+        anime({
+          targets: "#certificates .items",
+          duration: 3000,
+          delay: anime.stagger(100),
+          keyframes: [
+            {
+              duration: 1100,
+              scale: 1.3,
+              opacity: 1
+            },
+            {
+              duration: 2500,
+              scale: 1
+            }
+          ],
+          changeComplete: function () {
+            loading = false;
+          }
+        });
+      }
+    });
   }
+
+  type = "skills";
 });
 
 const closeBtn = getElById<HTMLButtonElement>("close");

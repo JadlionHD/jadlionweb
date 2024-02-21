@@ -58,21 +58,53 @@
 
     <div id="about" class="hidden opacity-0">
       <div class="absolute top-1/2 left-[5%] -translate-y-1/2 px-32">
-        <div class="flex flex-row justify-items-center">
-          <img src="/profile-nobg.png" width="600" alt="profile" />
+        <div class="flex flex-row justify-items-center gap-8">
+          <img
+            src="/profile-nobg.png"
+            width="600"
+            alt="profile"
+            class="bg-gray-200 border-black border-8 rounded-xl"
+          />
 
           <div>
-            <h1 class="text-2xl pb-2">Hendra Gunawan 🔭</h1>
+            <h1 class="text-2xl mb-2">Hendra Gunawan 🔭</h1>
+
+            <div class="mb-2">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>Name</td>
+                    <td class="w-4">:</td>
+                    <td>Hendra Gunawan</td>
+                  </tr>
+                  <tr>
+                    <td>Age</td>
+                    <td>:</td>
+                    <td>19 y.o</td>
+                  </tr>
+                  <tr>
+                    <td>Gender</td>
+                    <td>:</td>
+                    <td>Male</td>
+                  </tr>
+                  <tr>
+                    <td>Location</td>
+                    <td>:</td>
+                    <td>Indonesia, Central Kalimantan</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
             <p>Hello! I'm Hendra Gunawan, 19 years old and I am a Fullstacks Developer</p>
             <p>
               Software Engineering Vocational School graduate with a passion for technology,
               especially fullstack development
             </p>
-            <p class="pb-2">
+            <p class="mb-2">
               I like making Website & Desktop apps, especially apps related to networking such as
               multiplayer games
             </p>
-            <p class="pb-1">
+            <p class="mb-1">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo provident, fuga neque
               esse est, optio doloribus corrupti nesciunt, hic deleniti perspiciatis. Expedita,
               saepe cumque. Quam consequuntur reprehenderit voluptate saepe maxime?
@@ -83,6 +115,29 @@
     </div>
 
     <div id="skills" class="hidden opacity-0">
+      <div
+        id="certificates"
+        class="absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 hidden"
+      >
+        <div class="flex flex-wrap justify-center gap-8">
+          <div class="items w-72 h-56 bg-gray-200 rounded-md shadow-md">
+            <img src="/certificates/CAPIL_CERT.png" class="w-full h-32 object-cover" alt="CAPIL" />
+            <h1 class="text-center mt-8">Dinas Kependudukan dan Pencatatan Sipil</h1>
+          </div>
+          <div class="items w-72 h-56 bg-gray-200 rounded-md shadow-md">
+            <img src="/certificates/LSP_CERT.png" class="w-full h-32 object-cover" alt="LSP" />
+            <h1 class="text-center mt-8">Lembaga Sertifikasi Profesi</h1>
+          </div>
+          <div class="items w-72 h-56 bg-gray-200 rounded-md shadow-md">
+            <img
+              src="/certificates/PEMAGANGAN_CERT.png"
+              class="w-full h-32 object-cover"
+              alt="PEMAGANGAN"
+            />
+            <h1 class="text-center mt-8">Pemagangan dalam negeri Dinas Tenaga Kerja</h1>
+          </div>
+        </div>
+      </div>
       <div
         id="techs-languages"
         class="absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 hidden"
