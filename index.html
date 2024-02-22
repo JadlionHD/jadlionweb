@@ -14,7 +14,6 @@
           width="32"
           height="32"
           fill="currentColor"
-          class="bi bi-x-lg"
           viewBox="0 0 16 16"
         >
           <path
@@ -34,39 +33,38 @@
 
     <div id="box-group">
       <div
-        class="box absolute overflow-hidden rounded-lg md:w-64 md:h-[460px] w-48 h-[320px] bg-blue-400 left-1/2 opacity-0"
+        class="box absolute overflow-hidden rounded-lg lg:w-64 lg:h-[460px] w-48 h-[320px] bg-blue-400 left-1/2 opacity-0"
       ></div>
       <div
-        class="box absolute overflow-hidden rounded-lg md:w-64 md:h-[460px] w-48 h-[320px] bg-yellow-400 bottom-1/2 opacity-0"
+        class="box absolute overflow-hidden rounded-lg lg:w-64 lg:h-[460px] w-48 h-[320px] bg-yellow-400 bottom-1/2 opacity-0"
       ></div>
       <div
-        class="box absolute overflow-hidden rounded-lg md:w-64 md:h-[460px] w-48 h-[320px] bg-red-400 left-1/2 opacity-0"
+        class="box absolute overflow-hidden rounded-lg lg:w-64 lg:h-[460px] w-48 h-[320px] bg-red-400 left-1/2 opacity-0"
       ></div>
       <div
-        class="box absolute overflow-hidden rounded-lg md:w-64 md:h-[460px] w-48 h-[320px] bg-purple-400 bottom-1/2 opacity-0"
+        class="box absolute overflow-hidden rounded-lg lg:w-64 lg:h-[460px] w-48 h-[320px] bg-purple-400 bottom-1/2 opacity-0"
       ></div>
       <div
-        class="box absolute overflow-hidden rounded-lg md:w-64 md:h-[460px] w-48 h-[320px] bg-green-400 left-1/2 opacity-0"
+        class="box absolute overflow-hidden rounded-lg lg:w-64 lg:h-[460px] w-48 h-[320px] bg-green-400 left-1/2 opacity-0"
       ></div>
       <div
-        class="box absolute overflow-hidden rounded-lg md:w-64 md:h-[460px] w-48 h-[320px] bg-orange-400 bottom-1/2 opacity-0"
+        class="box absolute overflow-hidden rounded-lg lg:w-64 lg:h-[460px] w-48 h-[320px] bg-orange-400 bottom-1/2 opacity-0"
       ></div>
     </div>
 
     <div id="about" class="hidden opacity-0">
-      <div class="absolute top-1/2 left-[5%] -translate-y-1/2 px-32">
-        <div class="flex flex-row justify-items-center gap-8">
+      <div class="absolute lg:top-1/2 md:top-1/2 sm:top-[60%] top-[70%] left-[5%] -translate-y-1/2">
+        <div class="flex lg:flex-row flex-col gap-8">
           <img
             src="/profile-nobg.png"
-            width="600"
             alt="profile"
-            class="bg-gray-200 border-black border-8 rounded-xl"
+            class="bg-gray-200 lg:w-[600px] lg:h-[600px] w-64 h-64 border-black border-4 rounded-xl"
           />
 
           <div>
-            <h1 class="text-2xl mb-2">Hendra Gunawan 🔭</h1>
+            <h1 class="lg:text-2xl text-xl mb-2">Hendra Gunawan 🔭</h1>
 
-            <div class="mb-2">
+            <div class="lg-2 lg:text-xl text-sm">
               <table>
                 <tbody>
                   <tr>
@@ -92,20 +90,22 @@
                 </tbody>
               </table>
             </div>
-            <p>Hello! I'm Hendra Gunawan, 19 years old and I am a Fullstacks Developer</p>
-            <p>
-              Software Engineering Vocational School graduate with a passion for technology,
-              especially fullstack development
-            </p>
-            <p class="mb-2">
-              I like making Website & Desktop apps, especially apps related to networking such as
-              multiplayer games
-            </p>
-            <p class="mb-1">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo provident, fuga neque
-              esse est, optio doloribus corrupti nesciunt, hic deleniti perspiciatis. Expedita,
-              saepe cumque. Quam consequuntur reprehenderit voluptate saepe maxime?
-            </p>
+            <div class="lg:text-xl text-sm">
+              <p>Hello! I'm Hendra Gunawan, 19 years old and I am a Fullstacks Developer</p>
+              <p>
+                Software Engineering Vocational School graduate with a passion for technology,
+                especially fullstack development
+              </p>
+              <p class="mb-2">
+                I like making Website & Desktop apps, especially apps related to networking such as
+                multiplayer games
+              </p>
+              <p class="mb-1">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo provident, fuga neque
+                esse est, optio doloribus corrupti nesciunt, hic deleniti perspiciatis. Expedita,
+                saepe cumque. Quam consequuntur reprehenderit voluptate saepe maxime?
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -114,7 +114,7 @@
     <div id="skills" class="hidden opacity-0">
       <div
         id="certificates"
-        class="absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 hidden"
+        class="absolute lg:top-[60%] top-[90%] left-1/2 -translate-x-1/2 -translate-y-1/2 hidden"
       >
         <div class="flex flex-wrap justify-center gap-8">
           <a
@@ -156,7 +156,7 @@
       >
         <div class="flex flex-wrap justify-center gap-8">
           <div class="items opacity-0">
-            <svg width="64" height="64" viewBox="0 0 128 128">
+            <svg width="64" height="64" viewBox="0 0 128 128" class="md:w-16 md:h-16 w-8 h-8">
               <path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185H1.408z"></path>
               <path
                 fill="#323330"
@@ -165,7 +165,7 @@
             </svg>
           </div>
           <div class="items opacity-0">
-            <svg width="64" height="64" viewBox="0 0 128 128">
+            <svg width="64" height="64" viewBox="0 0 128 128" class="md:w-16 md:h-16 w-8 h-8">
               <path fill="#fff" d="M22.67 47h99.67v73.67H22.67z"></path>
               <path
                 data-name="original"
@@ -175,7 +175,7 @@
             </svg>
           </div>
           <div class="items opacity-0">
-            <svg width="64" height="64" viewBox="0 0 128 128">
+            <svg width="64" height="64" viewBox="0 0 128 128" class="md:w-16 md:h-16 w-8 h-8">
               <path
                 fill="#83CD29"
                 d="M112.771 30.334L68.674 4.729c-2.781-1.584-6.402-1.584-9.205 0L14.901 30.334C12.031 31.985 10 35.088 10 38.407v51.142c0 3.319 2.084 6.423 4.954 8.083l11.775 6.688c5.628 2.772 7.617 2.772 10.178 2.772 8.333 0 13.093-5.039 13.093-13.828v-50.49c0-.713-.371-1.774-1.071-1.774h-5.623C42.594 41 41 42.061 41 42.773v50.49c0 3.896-3.524 7.773-10.11 4.48L18.723 90.73c-.424-.23-.723-.693-.723-1.181V38.407c0-.482.555-.966.982-1.213l44.424-25.561c.415-.235 1.025-.235 1.439 0l43.882 25.555c.42.253.272.722.272 1.219v51.142c0 .488.183.963-.232 1.198l-44.086 25.576c-.378.227-.847.227-1.261 0l-11.307-6.749c-.341-.198-.746-.269-1.073-.086-3.146 1.783-3.726 2.02-6.677 3.043-.726.253-1.797.692.41 1.929l14.798 8.754a9.294 9.294 0 004.647 1.246c1.642 0 3.25-.426 4.667-1.246l43.885-25.582c2.87-1.672 4.23-4.764 4.23-8.083V38.407c0-3.319-1.36-6.414-4.229-8.073zM77.91 81.445c-11.726 0-14.309-3.235-15.17-9.066-.1-.628-.633-1.379-1.272-1.379h-5.731c-.709 0-1.279.86-1.279 1.566 0 7.466 4.059 16.512 23.453 16.512 14.039 0 22.088-5.455 22.088-15.109 0-9.572-6.467-12.084-20.082-13.886-13.762-1.819-15.16-2.738-15.16-5.962 0-2.658 1.184-6.203 11.374-6.203 9.105 0 12.461 1.954 13.842 8.091.118.577.645.991 1.24.991h5.754c.354 0 .692-.143.94-.396.24-.272.367-.613.335-.979-.891-10.568-7.912-15.493-22.112-15.493-12.631 0-20.166 5.334-20.166 14.275 0 9.698 7.497 12.378 19.622 13.577 14.505 1.422 15.633 3.542 15.633 6.395 0 4.955-3.978 7.066-13.309 7.066z"
@@ -183,7 +183,7 @@
             </svg>
           </div>
           <div class="items opacity-0">
-            <svg width="64" height="64" viewBox="0 0 128 128">
+            <svg width="64" height="64" viewBox="0 0 128 128" class="md:w-16 md:h-16 w-8 h-8">
               <path
                 fill="#D26383"
                 d="M115.4 30.7L67.1 2.9c-.8-.5-1.9-.7-3.1-.7-1.2 0-2.3.3-3.1.7l-48 27.9c-1.7 1-2.9 3.5-2.9 5.4v55.7c0 1.1.2 2.4 1 3.5l106.8-62c-.6-1.2-1.5-2.1-2.4-2.7z"
@@ -203,7 +203,7 @@
             </svg>
           </div>
           <div class="items opacity-0">
-            <svg width="64" height="64" viewBox="0 0 128 128">
+            <svg width="64" height="64" viewBox="0 0 128 128" class="md:w-16 md:h-16 w-8 h-8">
               <path
                 fill="#9B4F96"
                 d="M115.4 30.7L67.1 2.9c-.8-.5-1.9-.7-3.1-.7-1.2 0-2.3.3-3.1.7l-48 27.9c-1.7 1-2.9 3.5-2.9 5.4v55.7c0 1.1.2 2.4 1 3.5l106.8-62c-.6-1.2-1.5-2.1-2.4-2.7z"
@@ -219,7 +219,7 @@
             </svg>
           </div>
           <div class="items opacity-0">
-            <svg width="64" height="64" viewBox="0 0 128 128">
+            <svg width="64" height="64" viewBox="0 0 128 128" class="md:w-16 md:h-16 w-8 h-8">
               <path
                 fill="#0074BD"
                 d="M47.617 98.12s-4.767 2.774 3.397 3.71c9.892 1.13 14.947.968 25.845-1.092 0 0 2.871 1.795 6.873 3.351-24.439 10.47-55.308-.607-36.115-5.969zm-2.988-13.665s-5.348 3.959 2.823 4.805c10.567 1.091 18.91 1.18 33.354-1.6 0 0 1.993 2.025 5.132 3.131-29.542 8.64-62.446.68-41.309-6.336z"
@@ -243,7 +243,7 @@
             </svg>
           </div>
           <div class="items opacity-0">
-            <svg width="64" height="64" viewBox="0 0 128 128">
+            <svg width="64" height="64" viewBox="0 0 128 128" class="md:w-16 md:h-16 w-8 h-8">
               <g fill="#61DAFB">
                 <circle cx="64" cy="64" r="11.4"></circle>
                 <path
@@ -253,7 +253,7 @@
             </svg>
           </div>
           <div class="items opacity-0">
-            <svg width="64" height="64" viewBox="0 0 128 128">
+            <svg width="64" height="64" viewBox="0 0 128 128" class="md:w-16 md:h-16 w-8 h-8">
               <path
                 fill="#F34F29"
                 d="M124.737 58.378L69.621 3.264c-3.172-3.174-8.32-3.174-11.497 0L46.68 14.71l14.518 14.518c3.375-1.139 7.243-.375 9.932 2.314 2.703 2.706 3.461 6.607 2.294 9.993l13.992 13.993c3.385-1.167 7.292-.413 9.994 2.295 3.78 3.777 3.78 9.9 0 13.679a9.673 9.673 0 01-13.683 0 9.677 9.677 0 01-2.105-10.521L68.574 47.933l-.002 34.341a9.708 9.708 0 012.559 1.828c3.778 3.777 3.778 9.898 0 13.683-3.779 3.777-9.904 3.777-13.679 0-3.778-3.784-3.778-9.905 0-13.683a9.65 9.65 0 013.167-2.11V47.333a9.581 9.581 0 01-3.167-2.111c-2.862-2.86-3.551-7.06-2.083-10.576L41.056 20.333 3.264 58.123a8.133 8.133 0 000 11.5l55.117 55.114c3.174 3.174 8.32 3.174 11.499 0l54.858-54.858a8.135 8.135 0 00-.001-11.501z"
@@ -280,14 +280,14 @@
                   width="16"
                   height="16"
                   fill="currentColor"
-                  class="w-5 h-5"
+                  class="lg:w-5 lg:h-5 w-4 h-4"
                   viewBox="0 0 16 16"
                 >
                   <path
                     d="M2.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C3.25 2 2.49 2.759 2.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6M13.886 7.9v.163c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456V7.332c-1.114 0-1.49-.362-1.49-1.456V4.352C13.51 2.759 12.75 2 11.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6"
                   />
                 </svg>
-                <span class="ml-1">Tech Stack</span>
+                <span class="ml-1 lg:text-md text-sm">Tech Stack</span>
               </a>
             </li>
             <li id="show-certificate" class="z-30 flex-auto text-center">
@@ -300,7 +300,7 @@
                   width="16"
                   height="16"
                   fill="currentColor"
-                  class="w-5 h-5"
+                  class="lg:w-5 lg:h-5 w-4 h-4"
                   viewBox="0 0 16 16"
                 >
                   <path
@@ -310,7 +310,7 @@
                     d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8m0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5"
                   />
                 </svg>
-                <span class="ml-1">Certificate</span>
+                <span class="ml-1 lg:text-md text-sm">Certificate</span>
               </a>
             </li>
           </ul>
@@ -319,8 +319,8 @@
     </div>
 
     <div id="projects" class="hidden opacity-0">
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-        <div class="flex flex-wrap gap-x-12">
+      <div class="absolute xl:top-1/2 top-[90%] left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div class="flex flex-wrap gap-12">
           <div class="w-[250px] h-[320px] bg-gray-200 rounded-lg shadow-md">
             <div class="py-8 flex justify-center">
               <img
@@ -328,6 +328,7 @@
                 src="/yukio.png"
                 width="128"
                 height="128"
+                class="h-auto max-w-full"
                 alt="Yukio"
                 loading="lazy"
               />
@@ -352,6 +353,7 @@
                 src="https://raw.githubusercontent.com/JadlionHD/yuuda/main/.github/images/Poi.png"
                 width="128"
                 height="128"
+                class="h-auto max-w-full"
                 alt="Yuuda"
                 loading="lazy"
               />
@@ -376,6 +378,7 @@
                 src="https://raw.githubusercontent.com/JadlionHD/GrowTools/main/public/favicon.svg"
                 width="128"
                 height="128"
+                class="h-auto max-w-full"
                 alt="GrowTools"
                 loading="lazy"
               />
@@ -400,23 +403,17 @@
 
     <div id="socials" class="hidden opacity-0">
       <div
-        class="flex flex-wrap gap-x-16 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        class="flex flex-wrap gap-x-16 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 gap-8"
       >
         <div class="item">
-          <a
-            href="https://github.com/JadlionHD"
-            target="_blank"
-            rel="noopener noreferrer"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
+          <a href="https://github.com/JadlionHD" target="_blank" rel="noopener noreferrer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
               fill="currentColor"
               viewBox="0 0 16 16"
-              class="w-16 h-16 text-[64px] pb-4"
+              class="w-16 h-16 text-[64px]"
             >
               <path
                 d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
@@ -431,7 +428,7 @@
               width="16"
               height="16"
               fill="currentColor"
-              class="w-16 h-16 text-[64px] pb-4"
+              class="w-16 h-16 text-[64px]"
               viewBox="0 0 16 16"
             >
               <path
@@ -447,7 +444,7 @@
               width="16"
               height="16"
               fill="currentColor"
-              class="w-16 h-16 text-[64px] pb-4"
+              class="w-16 h-16 text-[64px]"
               viewBox="0 0 16 16"
             >
               <path
@@ -463,11 +460,43 @@
               width="16"
               height="16"
               fill="currentColor"
-              class="w-16 h-16 text-[64px] pb-2"
+              class="w-16 h-16 text-[64px]"
               viewBox="0 0 16 16"
             >
               <path
                 d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+              />
+            </svg>
+          </a>
+        </div>
+        <div class="item">
+          <a href="https://linkedin.com/in/hend-gun" target="_blank" rel="noopener noreferrer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="w-16 h-16 text-[64px]"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+              />
+            </svg>
+          </a>
+        </div>
+        <div class="item">
+          <a href="https://twitter.com/jadlionhd" target="_blank" rel="noopener noreferrer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="w-16 h-16 text-[64px]"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
               />
             </svg>
           </a>
@@ -499,14 +528,14 @@
       <div id="profile" class="text-white hidden">
         <h1
           id="username"
-          class="md:text-6xl text-5xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          class="lg:text-6xl text-5xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         >
           JadlionHD
         </h1>
 
         <div
           id="list"
-          class="md:text-2xl text-lg flex md:flex-wrap flex-row gap-x-8 absolute top-[58%] left-1/2 -translate-x-1/2 -translate-y-1/2"
+          class="lg:text-2xl text-lg flex lg:flex-wrap flex-row gap-x-8 absolute top-[58%] left-1/2 -translate-x-1/2 -translate-y-1/2"
         >
           <a href="#about" class="opacity-0" id="link-about">About</a>
           <a href="#socials" class="opacity-0" id="link-socials">Socials</a>

@@ -93,6 +93,16 @@ window.addEventListener("DOMContentLoaded", () => {
   const hashChanger = (fromEvent = false) => {
     if (fromEvent || window.location.hash.length) {
       $(getElById("loading-group")).hide();
+    } else {
+      loadingProgress();
+    }
+    if (!window.location.hash.length) {
+      loading = true;
+
+      showMain();
+      closeFunc();
+
+      loading = false;
     }
     switch (window.location.hash) {
       case "#about": {
@@ -147,60 +157,18 @@ window.addEventListener("DOMContentLoaded", () => {
   };
 
   hashChanger();
-  loadMain();
+  if (window.location.hash.length) {
+    $(main).hide();
+    loadMain(true);
+  } else {
+    $(main).show();
+    loadMain();
+  }
   window.addEventListener("hashchange", () => {
-    switch (type) {
-      case "socials": {
-        $(getElById("socials")).fadeOut().fadeTo(500, 0);
-        $(getElById("socials-footer")).fadeOut();
-        type = "none";
-        break;
-      }
-      case "projects": {
-        $(getElById("projects")).fadeOut().fadeTo(500, 0);
-        break;
-      }
-      case "skills": {
-        $(getElById("skills")).fadeOut().fadeTo(500, 0);
-        $(getElById("techs-languages")).fadeOut();
-        $(getElById("certificates")).fadeOut();
-        anime({
-          targets: "#skills-tabs",
-          delay: 500,
-          keyframes: [
-            {
-              duration: 500,
-              bottom: 0
-            }
-          ],
-          changeComplete: function () {
-            anime({
-              targets: "#techs-languages .items",
-              delay: anime.stagger(100),
-              opacity: 0
-            });
-          }
-        });
-
-        type = "none";
-        break;
-      }
-      case "about": {
-        $(getElById("about")).fadeOut().fadeTo(500, 0);
-        type = "none";
-        break;
-      }
-      default: {
-        type = "none";
-        break;
-      }
-    }
-
+    closeFunc();
     hashChanger(true);
   });
 });
-
-loadingProgress();
 
 $(getElById("loading-footer")).append(randomLoading[randLoadingNum]);
 
@@ -312,6 +280,12 @@ closeBtn.addEventListener("click", () => {
   loading = true;
 
   showMain();
+  closeFunc();
+
+  loading = false;
+});
+
+function closeFunc() {
   switch (type) {
     case "socials": {
       $(getElById("socials")).fadeOut().fadeTo(500, 0);
@@ -358,10 +332,7 @@ closeBtn.addEventListener("click", () => {
       break;
     }
   }
-
-  loading = false;
-});
-
+}
 // getElById<HTMLLinkElement>("link-about").addEventListener("click", () => {
 //   if (loading === false && clicked === false) {
 //     loadAbout();
@@ -386,11 +357,13 @@ closeBtn.addEventListener("click", () => {
 //   }
 // });
 
-function loadMain() {
+function loadMain(hideWhenLoad = false) {
   setTimeout(() => {
     // show main
 
-    $(main).show();
+    if (hideWhenLoad) $(main).hide();
+    else $(main).show();
+
     anime({
       targets: "#main",
       delay: 2000,
@@ -524,6 +497,7 @@ function loadSocials() {
 
 function showMain() {
   $(closeBtn).fadeOut(500);
+  $(document.body).css({ "background-color": "#131313" });
 
   anime({
     targets: "#profile",
@@ -579,6 +553,12 @@ function hideMain() {
   $(main).fadeOut(500);
   $(profile).fadeOut(500);
   $(closeBtn).fadeIn(500);
+  $(document.body)
+    .delay(1000)
+    .queue((_n) => {
+      $(document.body).css({ "background-color": "rgb(244 244 245 / var(--tw-bg-opacity))" });
+      _n();
+    });
 
   anime({
     targets: "#profile",
