@@ -113,7 +113,7 @@ window.addEventListener("DOMContentLoaded", () => {
           ]
         });
         $(main).fadeIn(500);
-        $(profile).fadeIn(500).fadeTo(200, 1);
+        $(profile).fadeIn(200).fadeTo(200, 1);
       }
       closeFunc();
 
