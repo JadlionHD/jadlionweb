@@ -100,6 +100,21 @@ window.addEventListener("DOMContentLoaded", () => {
       loading = true;
 
       showMain();
+
+      if (fromEvent) {
+        anime({
+          targets: "#profile",
+          duration: 200,
+          easing: "cubicBezier(0.500, 0.070, 0.000, 0.770)",
+          keyframes: [
+            {
+              opacity: 1
+            }
+          ]
+        });
+        $(main).fadeIn(500);
+        $(profile).fadeIn(500).fadeTo(200, 1);
+      }
       closeFunc();
 
       loading = false;
@@ -507,11 +522,7 @@ function showMain() {
       {
         opacity: 1
       }
-    ],
-    changeComplete: function () {
-      $(main).fadeIn(500);
-      $(profile).fadeIn(500);
-    }
+    ]
   });
 
   anime({
@@ -552,7 +563,7 @@ function showMain() {
 function hideMain() {
   $(main).fadeOut(500);
   $(profile).fadeOut(500);
-  $(closeBtn).fadeIn(500);
+  $(closeBtn).delay(1500).fadeIn(500);
   $(document.body)
     .delay(1000)
     .queue((_n) => {
