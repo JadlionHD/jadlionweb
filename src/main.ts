@@ -6,11 +6,9 @@ function getElById<T>(id: string): T {
   return document.getElementById(id) as T;
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-  document.body.style.display = "block";
-});
-
 let loading = true;
+let clicked = false;
+let type = "none";
 const main = getElById<HTMLElement>("main");
 const profile = getElById<HTMLElement>("profile");
 
@@ -20,7 +18,7 @@ const randomLoading = [
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    class="m-auto"
+    class="m-auto md:w-8 w-6"
     width="32"
     height="32"
     viewBox="0 0 100 100"
@@ -75,7 +73,7 @@ The clock is ticking, please take a moment
     width="32"
     height="32"
     fill="currentColor"
-    class="m-auto"
+    class="m-auto md:w-8 w-6"
     viewBox="0 0 16 16"
   >
     <path d="M9.167 4.5a1.167 1.167 0 1 1-2.334 0 1.167 1.167 0 0 1 2.334 0" />
@@ -89,6 +87,121 @@ Girls are now praying, please wait warmly...
 ];
 const randLoadingNum = Math.floor(Math.random() * randomLoading.length);
 
+window.addEventListener("DOMContentLoaded", () => {
+  document.body.style.display = "block";
+
+  const hashChanger = (fromEvent = false) => {
+    if (fromEvent || window.location.hash.length) {
+      $(getElById("loading-group")).hide();
+    }
+    switch (window.location.hash) {
+      case "#about": {
+        loadAbout();
+        type = "about";
+        break;
+      }
+
+      case "#socials": {
+        loadSocials();
+        type = "socials";
+        break;
+      }
+
+      case "#projects": {
+        loadProjects();
+        type = "projects";
+        break;
+      }
+
+      case "#skills": {
+        loadSkills();
+        type = "skills";
+        break;
+      }
+
+      default: {
+        if (window.location.hash.length) break;
+
+        anime({
+          targets: "#preloader",
+          easing: "cubicBezier(0.500, 0.070, 0.000, 0.770)",
+          delay: fromEvent ? 0 : 2000,
+          duration: anime.stagger(100),
+          keyframes: [
+            {
+              duration: 1000,
+              height: 0
+            },
+            {
+              delay: 500,
+              easing: "cubicBezier(0.500, 0.070, 0.000, 0.770)",
+              opacity: 0
+            }
+          ]
+        });
+
+        type = "none";
+        break;
+      }
+    }
+  };
+
+  hashChanger();
+  loadMain();
+  window.addEventListener("hashchange", () => {
+    switch (type) {
+      case "socials": {
+        $(getElById("socials")).fadeOut().fadeTo(500, 0);
+        $(getElById("socials-footer")).fadeOut();
+        type = "none";
+        break;
+      }
+      case "projects": {
+        $(getElById("projects")).fadeOut().fadeTo(500, 0);
+        break;
+      }
+      case "skills": {
+        $(getElById("skills")).fadeOut().fadeTo(500, 0);
+        $(getElById("techs-languages")).fadeOut();
+        $(getElById("certificates")).fadeOut();
+        anime({
+          targets: "#skills-tabs",
+          delay: 500,
+          keyframes: [
+            {
+              duration: 500,
+              bottom: 0
+            }
+          ],
+          changeComplete: function () {
+            anime({
+              targets: "#techs-languages .items",
+              delay: anime.stagger(100),
+              opacity: 0
+            });
+          }
+        });
+
+        type = "none";
+        break;
+      }
+      case "about": {
+        $(getElById("about")).fadeOut().fadeTo(500, 0);
+        type = "none";
+        break;
+      }
+      default: {
+        type = "none";
+        break;
+      }
+    }
+
+    hashChanger(true);
+  });
+});
+
+loadingProgress();
+
 $(getElById("loading-footer")).append(randomLoading[randLoadingNum]);
 
 if (randLoadingNum === 1) {
@@ -100,122 +213,6 @@ if (randLoadingNum === 1) {
     duration: 990
   });
 }
-
-anime({
-  targets: "#preloader",
-  easing: "cubicBezier(0.500, 0.070, 0.000, 0.770)",
-  delay: 2000,
-  duration: anime.stagger(100),
-  keyframes: [
-    {
-      duration: 1000,
-      height: 0
-    },
-    {
-      delay: 500,
-      easing: "cubicBezier(0.500, 0.070, 0.000, 0.770)",
-      opacity: 0
-    }
-  ]
-});
-
-anime({
-  targets: "#loading-group",
-  delay: 2000,
-  opacity: 0
-});
-
-let loadingObj = {
-  num: "0%"
-};
-
-anime({
-  targets: loadingObj,
-  num: "100%",
-  round: 1,
-  duration: 1700,
-  easing: "cubicBezier(0.355, 0.890, 0.755, 0.580)",
-  update: function () {
-    (document.getElementById("loading-bar") as HTMLElement).style.width = loadingObj.num;
-    (document.getElementById("loading-percentage") as HTMLElement).innerText = loadingObj.num;
-  },
-  changeComplete: function () {
-    $(getElById("loading-group")).fadeOut(500);
-  }
-});
-
-setTimeout(() => {
-  // show main
-
-  $(main).show();
-  anime({
-    targets: "#main",
-    delay: 2000,
-    opacity: 1
-  });
-
-  anime({
-    targets: "#box-group .box",
-    delay: function (_el, i, _l) {
-      return i * 200;
-    },
-
-    keyframes: [
-      {
-        opacity: 1,
-        top: "50%",
-        left: "50%",
-        translateX: "-50%",
-        translateY: "-50%",
-        rotate: anime.stagger([-20, 100])
-      }
-    ],
-    changeComplete: function () {
-      $(profile).show();
-    }
-  });
-
-  setTimeout(() => {
-    anime({
-      targets: "#list a",
-      delay: anime.stagger(200),
-      opacity: 1,
-      changeComplete: function () {
-        loading = false;
-
-        anime({
-          targets: "#box-group .box",
-          delay: anime.stagger(200, { start: 2000 }),
-          endDelay: anime.stagger(200, { start: 2000 }),
-          direction: "alternate",
-          keyframes: [
-            {
-              duration: 1000,
-              scale: 1.2,
-              "border-radius": "60px"
-            },
-            {
-              duration: 1000,
-              scale: 1
-            }
-          ],
-          loop: true
-        });
-
-        $(getElById("loading-footer")).fadeIn(1000);
-        setTimeout(() => {
-          $(getElById("loading-footer")).fadeOut();
-          $(getElById("footer"))
-            .text(`© 2024 - ${new Date().getFullYear()} | Made with love ❤️ by Jadlion`)
-            .fadeIn(1000);
-        }, 5000);
-      }
-    });
-  }, 3000);
-}, 3000);
-
-let clicked = false;
-let type = "none";
 
 getElById<HTMLLIElement>("show-techs").addEventListener("click", () => {
   if (loading === false) {
@@ -312,9 +309,6 @@ getElById<HTMLLIElement>("show-certificate").addEventListener("click", () => {
 
 const closeBtn = getElById<HTMLButtonElement>("close");
 closeBtn.addEventListener("click", () => {
-  // if (loading === false && clicked === true) {
-  // } else if (loading === false && clicked === false) {
-  // }
   loading = true;
 
   showMain();
@@ -332,6 +326,7 @@ closeBtn.addEventListener("click", () => {
     case "skills": {
       $(getElById("skills")).fadeOut().fadeTo(500, 0);
       $(getElById("techs-languages")).fadeOut();
+      $(getElById("certificates")).fadeOut();
       anime({
         targets: "#skills-tabs",
         delay: 500,
@@ -364,54 +359,168 @@ closeBtn.addEventListener("click", () => {
     }
   }
 
-  console.log("false");
   loading = false;
 });
 
-getElById<HTMLLinkElement>("link-about").addEventListener("click", () => {
-  if (loading === false && clicked === false) {
-    // Hide
-    loading = true;
+// getElById<HTMLLinkElement>("link-about").addEventListener("click", () => {
+//   if (loading === false && clicked === false) {
+//     loadAbout();
+//   }
+// });
 
-    hideMain();
-    $(getElById("about")).fadeIn().fadeTo(500, 1);
-    type = "about";
-  }
-});
+// getElById<HTMLLinkElement>("link-skills").addEventListener("click", () => {
+//   if (loading === false && clicked === false) {
+//     loadSkills();
+//   }
+// });
 
-getElById<HTMLLinkElement>("link-skills").addEventListener("click", () => {
-  if (loading === false && clicked === false) {
-    // Hide
-    loading = true;
+// getElById<HTMLLinkElement>("link-projects").addEventListener("click", () => {
+//   if (loading === false && clicked === false) {
+//     loadProjects();
+//   }
+// });
 
-    hideMain();
-    $(getElById("skills")).fadeIn().fadeTo(500, 1);
-    type = "skills";
-  }
-});
+// getElById<HTMLLinkElement>("link-socials").addEventListener("click", () => {
+//   if (loading === false && clicked === false) {
+//     loadSocials();
+//   }
+// });
 
-getElById<HTMLLinkElement>("link-projects").addEventListener("click", () => {
-  if (loading === false && clicked === false) {
-    // Hide
-    loading = true;
+function loadMain() {
+  setTimeout(() => {
+    // show main
 
-    hideMain();
-    $(getElById("projects")).fadeIn().fadeTo(500, 1);
-    type = "projects";
-  }
-});
+    $(main).show();
+    anime({
+      targets: "#main",
+      delay: 2000,
+      opacity: 1
+    });
 
-getElById<HTMLLinkElement>("link-socials").addEventListener("click", () => {
-  if (loading === false && clicked === false) {
-    // Hide
-    loading = true;
+    anime({
+      targets: "#box-group .box",
+      delay: function (_el, i, _l) {
+        return i * 200;
+      },
 
-    hideMain();
-    $(getElById("socials")).fadeIn().fadeTo(500, 1);
-    $(getElById("socials-footer")).delay(5000).fadeIn(1000);
-    type = "socials";
-  }
-});
+      keyframes: [
+        {
+          opacity: 1,
+          top: "50%",
+          left: "50%",
+          translateX: "-50%",
+          translateY: "-50%",
+          rotate: anime.stagger([-20, 100])
+        }
+      ],
+      changeComplete: function () {
+        $(profile).show();
+      }
+    });
+
+    setTimeout(() => {
+      anime({
+        targets: "#list a",
+        delay: anime.stagger(200),
+        opacity: 1,
+        changeComplete: function () {
+          loading = false;
+
+          anime({
+            targets: "#box-group .box",
+            delay: anime.stagger(200, { start: 2000 }),
+            endDelay: anime.stagger(200, { start: 2000 }),
+            direction: "alternate",
+            keyframes: [
+              {
+                duration: 1000,
+                scale: 1.2,
+                "border-radius": "60px"
+              },
+              {
+                duration: 1000,
+                scale: 1
+              }
+            ],
+            loop: true
+          });
+
+          $(getElById("loading-footer")).fadeIn(1000);
+          setTimeout(() => {
+            $(getElById("loading-footer")).fadeOut();
+            $(getElById("footer"))
+              .text(`© 2024 - ${new Date().getFullYear()} | Made with love ❤️ by Jadlion`)
+              .fadeIn(1000);
+          }, 5000);
+        }
+      });
+    }, 3000);
+  }, 3000);
+}
+
+function loadingProgress() {
+  anime({
+    targets: "#loading-group",
+    delay: 2000,
+    opacity: 0
+  });
+
+  let loadingObj = {
+    num: "0%"
+  };
+
+  anime({
+    targets: loadingObj,
+    num: "100%",
+    round: 1,
+    duration: 1700,
+    easing: "cubicBezier(0.355, 0.890, 0.755, 0.580)",
+    update: function () {
+      (document.getElementById("loading-bar") as HTMLElement).style.width = loadingObj.num;
+      (document.getElementById("loading-percentage") as HTMLElement).innerText = loadingObj.num;
+    },
+    changeComplete: function () {
+      $(getElById("loading-group")).fadeOut(500);
+    }
+  });
+}
+
+function loadAbout() {
+  // Hide
+  loading = true;
+
+  hideMain();
+  $(getElById("about")).fadeIn().fadeTo(500, 1);
+  type = "about";
+}
+
+function loadSkills() {
+  // Hide
+  loading = true;
+
+  hideMain();
+  $(getElById("skills")).fadeIn().fadeTo(500, 1);
+  type = "skills";
+}
+
+function loadProjects() {
+  // Hide
+  loading = true;
+
+  hideMain();
+  $(getElById("projects")).fadeIn().fadeTo(500, 1);
+  type = "projects";
+}
+
+function loadSocials() {
+  // Hide
+  loading = true;
+
+  hideMain();
+  $(getElById("socials")).fadeIn().fadeTo(500, 1);
+  $(getElById("socials-footer")).delay(5000).fadeIn(1000);
+  type = "socials";
+}
 
 function showMain() {
   $(closeBtn).fadeOut(500);
